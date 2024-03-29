@@ -54,7 +54,7 @@ const initialNodes = [
 let id = 3;
 const getId = () => `node_${id++}`;
 
-const App = () => {
+const FlowWithProvider = () => {
   // States and hooks setup
   const reactFlowWrapper = useRef(null);
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
@@ -318,12 +318,12 @@ const App = () => {
 };
 
 // Wrap App with ReactFlowProvider
-function FlowWithProvider() {
+function App() {
   return (
     <ReactFlowProvider>
-      <App />
+      <FlowWithProvider />
     </ReactFlowProvider>
   );
 }
 
-export default FlowWithProvider;
+export default App;
